@@ -1,0 +1,23 @@
+public class MemoryStorage {
+    private double memoryValue;
+
+    public MemoryStorage() {
+        memoryValue = 0.0;
+    }
+
+    public void store(double value) {
+        memoryValue = value;
+    }
+
+    public String recall() {
+        return String.valueOf(memoryValue);
+    }
+
+    public void clear() {
+        memoryValue = 0.0;
+    }
+
+    public void add(double value) {
+        memoryValue += value;
+    }
+}
