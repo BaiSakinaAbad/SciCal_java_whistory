@@ -40,4 +40,38 @@ public class CalculatorView {
 
         historyDialog.setVisible(true);
     }
+
+    // Method to move the cursor left
+    public void moveCursorLeft() {
+        if (displayPanel != null) {
+            int pos = displayPanel.getCaretPosition();
+            if (pos > 0) {
+                displayPanel.setCaretPosition(pos - 1);
+            }
+        }
+    }
+
+    // Method to move the cursor right
+    public void moveCursorRight() {
+        if (displayPanel != null) {
+            int pos = displayPanel.getCaretPosition();
+            String text = displayPanel.getText();
+            if (pos < text.length()) {
+                displayPanel.setCaretPosition(pos + 1);
+            }
+        }
+    }
+
+    // Method to delete the character before the cursor
+    public void deleteCharBeforeCursor() {
+        if (displayPanel != null) {
+            int pos = displayPanel.getCaretPosition();
+            String text = displayPanel.getText();
+            if (pos > 0) {
+                String newText = text.substring(0, pos - 1) + text.substring(pos);
+                displayPanel.setText(newText);
+                displayPanel.setCaretPosition(pos - 1);
+            }
+        }
+    }
 }

@@ -16,7 +16,8 @@ public class CalculatorController {
             JButton btnDivide, JButton btnEqual, JButton btnSin, JButton btnCos, JButton btnTan,
             JButton btnLog, JButton btnLn, JButton btnExponent, JButton btnLeftParen, JButton btnRightParen,
             JButton btnMemoryStore, JButton btnMemoryRecall, JButton btnMemoryClear, JButton btnMemoryAdd,
-            JButton btnHistory, JButton btnSqrt, JButton btnNthRoot, JButton btnCsc, JButton btnSec, JButton btnCot
+            JButton btnHistory, JButton btnSqrt, JButton btnNthRoot, JButton btnCsc, JButton btnSec, JButton btnCot,
+            JButton btnLeftArrow, JButton btnRightArrow, JButton btnDelete
     ) {
         // Number buttons
         btnOne.addActionListener(e -> {
@@ -223,6 +224,24 @@ public class CalculatorController {
         btnHistory.addActionListener(e -> {
             System.out.println("Button Hist clicked");
             view.showHistoryDialog(model.getHistory());
+        });
+
+        // New functionality: Left arrow button
+        btnLeftArrow.addActionListener(e -> {
+            System.out.println("Button Left Arrow clicked");
+            view.moveCursorLeft();
+        });
+
+        // New functionality: Right arrow button
+        btnRightArrow.addActionListener(e -> {
+            System.out.println("Button Right Arrow clicked");
+            view.moveCursorRight();
+        });
+
+        // New functionality: Delete button (backspace)
+        btnDelete.addActionListener(e -> {
+            System.out.println("Button Delete clicked");
+            view.deleteCharBeforeCursor();
         });
     }
 }

@@ -9,6 +9,9 @@
       <alignmentX value="0.0"/>
       <alignmentY value="0.0"/>
       <background color="-7972"/>
+      <focusCycleRoot value="true"/>
+      <focusTraversalPolicyProvider value="true"/>
+      <focusable value="true"/>
       <font name="Gill Sans Ultra Bold" size="14" style="0"/>
       <maximumSize width="500" height="400"/>
       <preferredSize width="500" height="400"/>
@@ -27,6 +30,7 @@
           <alignmentX value="0.0"/>
           <alignmentY value="0.0"/>
           <background color="-3564898"/>
+          <focusable value="false"/>
           <font name="Gill Sans Ultra Bold" size="14" style="0"/>
           <foreground color="-2497055"/>
           <hideActionText value="false"/>
@@ -42,6 +46,7 @@
           <alignmentX value="0.0"/>
           <alignmentY value="0.0"/>
           <background color="-3564898"/>
+          <focusable value="false"/>
           <font name="Gill Sans Ultra Bold" size="14" style="0"/>
           <foreground color="-1"/>
           <hideActionText value="false"/>
@@ -57,6 +62,7 @@
           <alignmentX value="0.0"/>
           <alignmentY value="0.0"/>
           <background color="-3564898"/>
+          <focusable value="false"/>
           <font name="Gill Sans Ultra Bold" size="14" style="0"/>
           <foreground color="-1"/>
           <hideActionText value="false"/>
@@ -71,6 +77,7 @@
         <properties>
           <alignmentY value="0.0"/>
           <background color="-1847081"/>
+          <focusable value="false"/>
           <font name="Gill Sans Ultra Bold" size="14" style="0"/>
           <foreground color="-10403511"/>
           <hideActionText value="false"/>
@@ -85,6 +92,7 @@
         <properties>
           <alignmentY value="0.0"/>
           <background color="-1847081"/>
+          <focusable value="false"/>
           <font name="Gill Sans Ultra Bold" size="14" style="0"/>
           <foreground color="-10403511"/>
           <hideActionText value="false"/>
@@ -99,6 +107,7 @@
         <properties>
           <alignmentY value="0.0"/>
           <background color="-1847081"/>
+          <focusable value="false"/>
           <font name="Gill Sans Ultra Bold" size="14" style="0"/>
           <foreground color="-10403511"/>
           <hideActionText value="false"/>
@@ -113,6 +122,7 @@
         <properties>
           <alignmentY value="0.0"/>
           <background color="-1847081"/>
+          <focusable value="false"/>
           <font name="Gill Sans Ultra Bold" size="14" style="0"/>
           <foreground color="-10403511"/>
           <hideActionText value="false"/>
@@ -128,6 +138,7 @@
           <alignmentX value="0.0"/>
           <alignmentY value="0.0"/>
           <background color="-3564898"/>
+          <focusable value="false"/>
           <font name="Gill Sans Ultra Bold" size="14" style="0"/>
           <foreground color="-1"/>
           <hideActionText value="false"/>
@@ -143,6 +154,7 @@
           <alignmentX value="0.0"/>
           <alignmentY value="0.0"/>
           <background color="-3564898"/>
+          <focusable value="false"/>
           <font name="Gill Sans Ultra Bold" size="14" style="0"/>
           <foreground color="-1"/>
           <hideActionText value="false"/>
@@ -158,6 +170,7 @@
           <alignmentX value="0.0"/>
           <alignmentY value="0.0"/>
           <background color="-3564898"/>
+          <focusable value="false"/>
           <font name="Gill Sans Ultra Bold" size="14" style="0"/>
           <foreground color="-1"/>
           <hideActionText value="false"/>
@@ -173,6 +186,7 @@
           <alignmentX value="0.0"/>
           <alignmentY value="0.0"/>
           <background color="-3564898"/>
+          <focusable value="false"/>
           <font name="Gill Sans Ultra Bold" size="14" style="0"/>
           <foreground color="-1"/>
           <hideActionText value="false"/>
@@ -188,6 +202,7 @@
           <alignmentX value="0.0"/>
           <alignmentY value="0.0"/>
           <background color="-3564898"/>
+          <focusable value="false"/>
           <font name="Gill Sans Ultra Bold" size="14" style="0"/>
           <foreground color="-1"/>
           <hideActionText value="false"/>
@@ -203,86 +218,12 @@
           <alignmentX value="0.0"/>
           <alignmentY value="0.0"/>
           <background color="-3564898"/>
+          <focusable value="false"/>
           <font name="Gill Sans Ultra Bold" size="14" style="0"/>
           <foreground color="-1"/>
           <hideActionText value="false"/>
           <iconTextGap value="7"/>
           <text value="6"/>
-        </properties>
-      </component>
-      <component id="d1349" class="javax.swing.JButton" binding="btnDivide">
-        <constraints>
-          <grid row="6" column="4" row-span="1" col-span="1" vsize-policy="5" hsize-policy="1" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
-        </constraints>
-        <properties>
-          <alignmentX value="0.0"/>
-          <alignmentY value="0.0"/>
-          <background color="-1847081"/>
-          <font name="Gill Sans Ultra Bold" size="14" style="0"/>
-          <foreground color="-10403511"/>
-          <hideActionText value="false"/>
-          <iconTextGap value="7"/>
-          <text value="/"/>
-        </properties>
-      </component>
-      <component id="b7f63" class="javax.swing.JButton" binding="btnMultiply">
-        <constraints>
-          <grid row="6" column="3" row-span="1" col-span="1" vsize-policy="5" hsize-policy="1" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
-        </constraints>
-        <properties>
-          <alignmentX value="0.0"/>
-          <alignmentY value="0.0"/>
-          <background color="-1847081"/>
-          <font name="Gill Sans Ultra Bold" size="14" style="0"/>
-          <foreground color="-10403511"/>
-          <hideActionText value="false"/>
-          <iconTextGap value="7"/>
-          <text value="*"/>
-        </properties>
-      </component>
-      <component id="57f48" class="javax.swing.JButton" binding="btnRightParen">
-        <constraints>
-          <grid row="5" column="4" row-span="1" col-span="1" vsize-policy="1" hsize-policy="1" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
-        </constraints>
-        <properties>
-          <alignmentX value="0.0"/>
-          <alignmentY value="0.0"/>
-          <background color="-1847081"/>
-          <font name="Gill Sans Ultra Bold" size="14" style="0"/>
-          <foreground color="-10403511"/>
-          <hideActionText value="false"/>
-          <iconTextGap value="7"/>
-          <text value=")"/>
-        </properties>
-      </component>
-      <component id="961db" class="javax.swing.JButton" binding="btnLeftParen">
-        <constraints>
-          <grid row="5" column="3" row-span="1" col-span="1" vsize-policy="1" hsize-policy="1" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
-        </constraints>
-        <properties>
-          <alignmentX value="0.0"/>
-          <alignmentY value="0.0"/>
-          <background color="-1847081"/>
-          <font name="Gill Sans Ultra Bold" size="14" style="0"/>
-          <foreground color="-10403511"/>
-          <hideActionText value="false"/>
-          <iconTextGap value="7"/>
-          <text value="("/>
-        </properties>
-      </component>
-      <component id="82f32" class="javax.swing.JButton" binding="btnClear">
-        <constraints>
-          <grid row="4" column="3" row-span="1" col-span="1" vsize-policy="5" hsize-policy="1" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
-        </constraints>
-        <properties>
-          <alignmentX value="0.0"/>
-          <alignmentY value="0.0"/>
-          <background color="-7412775"/>
-          <font name="Gill Sans Ultra Bold" size="14" style="0"/>
-          <foreground color="-10403511"/>
-          <hideActionText value="false"/>
-          <iconTextGap value="7"/>
-          <text value="Cl"/>
         </properties>
       </component>
       <component id="7d1a2" class="javax.swing.JButton" binding="btnLog">
@@ -292,6 +233,7 @@
         <properties>
           <alignmentY value="0.0"/>
           <background color="-1847081"/>
+          <focusable value="false"/>
           <font name="Gill Sans Ultra Bold" size="14" style="0"/>
           <foreground color="-10403511"/>
           <hideActionText value="false"/>
@@ -306,6 +248,7 @@
         <properties>
           <alignmentY value="0.0"/>
           <background color="-1847081"/>
+          <focusable value="false"/>
           <font name="Gill Sans Ultra Bold" size="14" style="0"/>
           <foreground color="-10403511"/>
           <hideActionText value="false"/>
@@ -320,6 +263,7 @@
         <properties>
           <alignmentY value="0.0"/>
           <background color="-1847081"/>
+          <focusable value="false"/>
           <font name="Gill Sans Ultra Bold" size="14" style="0"/>
           <foreground color="-10403511"/>
           <hideActionText value="false"/>
@@ -334,6 +278,7 @@
         <properties>
           <alignmentY value="0.0"/>
           <background color="-1847081"/>
+          <focusable value="false"/>
           <font name="Gill Sans Ultra Bold" size="14" style="0"/>
           <foreground color="-10403511"/>
           <hideActionText value="false"/>
@@ -348,6 +293,7 @@
         <properties>
           <alignmentY value="0.0"/>
           <background color="-1847081"/>
+          <focusable value="false"/>
           <font name="Gill Sans Ultra Bold" size="14" style="0"/>
           <foreground color="-10403511"/>
           <hideActionText value="false"/>
@@ -362,6 +308,7 @@
         <properties>
           <alignmentY value="0.0"/>
           <background color="-1847081"/>
+          <focusable value="false"/>
           <font name="Gill Sans Ultra Bold" size="14" style="0"/>
           <foreground color="-10403511"/>
           <hideActionText value="false"/>
@@ -376,6 +323,7 @@
         <properties>
           <alignmentY value="0.0"/>
           <background color="-1847081"/>
+          <focusable value="false"/>
           <font name="Gill Sans Ultra Bold" size="14" style="0"/>
           <foreground color="-10403511"/>
           <hideActionText value="false"/>
@@ -390,6 +338,12 @@
           </grid>
         </constraints>
         <properties>
+          <autoscrolls value="true"/>
+          <background color="-1858123"/>
+          <caretColor color="-16777216"/>
+          <editable value="true"/>
+          <focusTraversalPolicyProvider value="false"/>
+          <focusable value="true"/>
           <font name="Consolas" size="16" style="0"/>
           <foreground color="-16777216"/>
           <margin top="3" left="11" bottom="3" right="8"/>
@@ -406,6 +360,7 @@
           <autoscrolls value="false"/>
           <background color="-3564898"/>
           <enabled value="true"/>
+          <focusable value="false"/>
           <font name="Gill Sans Ultra Bold" size="14" style="0"/>
           <foreground color="-1"/>
           <hideActionText value="false"/>
@@ -422,43 +377,12 @@
           <alignmentY value="0.0"/>
           <background color="-3564898"/>
           <enabled value="true"/>
+          <focusable value="false"/>
           <font name="Gill Sans Ultra Bold" size="14" style="0"/>
           <foreground color="-1"/>
           <hideActionText value="false"/>
           <iconTextGap value="7"/>
           <text value="."/>
-        </properties>
-      </component>
-      <component id="8360" class="javax.swing.JButton" binding="btnEqual">
-        <constraints>
-          <grid row="7" column="2" row-span="1" col-span="1" vsize-policy="1" hsize-policy="1" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
-        </constraints>
-        <properties>
-          <alignmentX value="0.0"/>
-          <alignmentY value="0.0"/>
-          <background color="-3564898"/>
-          <enabled value="true"/>
-          <font name="Gill Sans Ultra Bold" size="14" style="0"/>
-          <foreground color="-1"/>
-          <hideActionText value="false"/>
-          <iconTextGap value="7"/>
-          <text value="="/>
-        </properties>
-      </component>
-      <component id="cb81e" class="javax.swing.JButton" binding="btnPlus">
-        <constraints>
-          <grid row="7" column="3" row-span="1" col-span="1" vsize-policy="5" hsize-policy="1" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
-        </constraints>
-        <properties>
-          <alignmentX value="0.0"/>
-          <alignmentY value="0.0"/>
-          <background color="-1847081"/>
-          <enabled value="true"/>
-          <font name="Gill Sans Ultra Bold" size="14" style="0"/>
-          <foreground color="-10403511"/>
-          <hideActionText value="false"/>
-          <iconTextGap value="7"/>
-          <text value="+"/>
         </properties>
       </component>
       <component id="65aa6" class="javax.swing.JButton" binding="btnMemoryClear">
@@ -468,27 +392,12 @@
         <properties>
           <alignmentY value="0.0"/>
           <background color="-3564898"/>
+          <focusable value="false"/>
           <font name="Gill Sans Ultra Bold" size="14" style="0"/>
           <foreground color="-1"/>
           <hideActionText value="false"/>
           <iconTextGap value="7"/>
           <text value="MC"/>
-        </properties>
-      </component>
-      <component id="5629d" class="javax.swing.JButton" binding="btnMinus">
-        <constraints>
-          <grid row="7" column="4" row-span="1" col-span="1" vsize-policy="5" hsize-policy="1" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
-        </constraints>
-        <properties>
-          <alignmentX value="0.0"/>
-          <alignmentY value="0.0"/>
-          <background color="-1847081"/>
-          <enabled value="true"/>
-          <font name="Gill Sans Ultra Bold" size="14" style="0"/>
-          <foreground color="-10403511"/>
-          <hideActionText value="false"/>
-          <iconTextGap value="7"/>
-          <text value="-"/>
         </properties>
       </component>
       <component id="5640e" class="javax.swing.JButton" binding="btnMemoryRecall">
@@ -498,6 +407,7 @@
         <properties>
           <alignmentY value="0.0"/>
           <background color="-3564898"/>
+          <focusable value="false"/>
           <font name="Gill Sans Ultra Bold" size="14" style="0"/>
           <foreground color="-1"/>
           <hideActionText value="false"/>
@@ -512,6 +422,7 @@
         <properties>
           <alignmentY value="0.0"/>
           <background color="-3564898"/>
+          <focusable value="false"/>
           <font name="Gill Sans Ultra Bold" size="14" style="0"/>
           <foreground color="-1"/>
           <hideActionText value="false"/>
@@ -526,6 +437,7 @@
         <properties>
           <alignmentY value="0.0"/>
           <background color="-3564898"/>
+          <focusable value="false"/>
           <font name="Gill Sans Ultra Bold" size="14" style="0"/>
           <foreground color="-1"/>
           <hideActionText value="false"/>
@@ -540,11 +452,183 @@
         <properties>
           <alignmentY value="0.0"/>
           <background color="-3564898"/>
+          <focusable value="false"/>
           <font name="Gill Sans Ultra Bold" size="14" style="0"/>
           <foreground color="-1"/>
           <hideActionText value="false"/>
           <iconTextGap value="7"/>
           <text value="Hist"/>
+        </properties>
+      </component>
+      <component id="57f48" class="javax.swing.JButton" binding="btnRightParen">
+        <constraints>
+          <grid row="4" column="4" row-span="1" col-span="1" vsize-policy="1" hsize-policy="1" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties>
+          <alignmentX value="0.0"/>
+          <alignmentY value="0.0"/>
+          <background color="-1847081"/>
+          <focusable value="false"/>
+          <font name="Gill Sans Ultra Bold" size="14" style="0"/>
+          <foreground color="-10403511"/>
+          <hideActionText value="false"/>
+          <iconTextGap value="7"/>
+          <text value=")"/>
+        </properties>
+      </component>
+      <component id="b7f63" class="javax.swing.JButton" binding="btnMultiply">
+        <constraints>
+          <grid row="5" column="3" row-span="1" col-span="1" vsize-policy="5" hsize-policy="1" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties>
+          <alignmentX value="0.0"/>
+          <alignmentY value="0.0"/>
+          <background color="-1847081"/>
+          <focusable value="false"/>
+          <font name="Gill Sans Ultra Bold" size="14" style="0"/>
+          <foreground color="-10403511"/>
+          <hideActionText value="false"/>
+          <iconTextGap value="7"/>
+          <text value="*"/>
+        </properties>
+      </component>
+      <component id="d1349" class="javax.swing.JButton" binding="btnDivide">
+        <constraints>
+          <grid row="5" column="4" row-span="1" col-span="1" vsize-policy="5" hsize-policy="1" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties>
+          <alignmentX value="0.0"/>
+          <alignmentY value="0.0"/>
+          <background color="-1847081"/>
+          <focusable value="false"/>
+          <font name="Gill Sans Ultra Bold" size="14" style="0"/>
+          <foreground color="-10403511"/>
+          <hideActionText value="false"/>
+          <iconTextGap value="7"/>
+          <text value="/"/>
+        </properties>
+      </component>
+      <component id="5629d" class="javax.swing.JButton" binding="btnMinus">
+        <constraints>
+          <grid row="6" column="4" row-span="1" col-span="1" vsize-policy="5" hsize-policy="1" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties>
+          <alignmentX value="0.0"/>
+          <alignmentY value="0.0"/>
+          <background color="-1847081"/>
+          <enabled value="true"/>
+          <focusable value="false"/>
+          <font name="Gill Sans Ultra Bold" size="14" style="0"/>
+          <foreground color="-10403511"/>
+          <hideActionText value="false"/>
+          <iconTextGap value="7"/>
+          <text value="-"/>
+        </properties>
+      </component>
+      <component id="cb81e" class="javax.swing.JButton" binding="btnPlus">
+        <constraints>
+          <grid row="6" column="3" row-span="1" col-span="1" vsize-policy="5" hsize-policy="1" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties>
+          <alignmentX value="0.0"/>
+          <alignmentY value="0.0"/>
+          <background color="-1847081"/>
+          <enabled value="true"/>
+          <focusable value="false"/>
+          <font name="Gill Sans Ultra Bold" size="14" style="0"/>
+          <foreground color="-10403511"/>
+          <hideActionText value="false"/>
+          <iconTextGap value="7"/>
+          <text value="+"/>
+        </properties>
+      </component>
+      <component id="8360" class="javax.swing.JButton" binding="btnEqual">
+        <constraints>
+          <grid row="7" column="2" row-span="1" col-span="3" vsize-policy="1" hsize-policy="1" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties>
+          <alignmentX value="0.0"/>
+          <alignmentY value="0.0"/>
+          <background color="-3564898"/>
+          <enabled value="true"/>
+          <focusable value="false"/>
+          <font name="Gill Sans Ultra Bold" size="14" style="0"/>
+          <foreground color="-1"/>
+          <hideActionText value="false"/>
+          <iconTextGap value="7"/>
+          <text value="="/>
+        </properties>
+      </component>
+      <component id="961db" class="javax.swing.JButton" binding="btnLeftParen">
+        <constraints>
+          <grid row="4" column="3" row-span="1" col-span="1" vsize-policy="1" hsize-policy="1" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties>
+          <alignmentX value="0.0"/>
+          <alignmentY value="0.0"/>
+          <background color="-1847081"/>
+          <focusable value="false"/>
+          <font name="Gill Sans Ultra Bold" size="14" style="0"/>
+          <foreground color="-10403511"/>
+          <hideActionText value="false"/>
+          <iconTextGap value="7"/>
+          <text value="("/>
+        </properties>
+      </component>
+      <component id="ce6c6" class="javax.swing.JButton" binding="btnLeftArrow">
+        <constraints>
+          <grid row="2" column="3" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties>
+          <actionCommand value="Button"/>
+          <background color="-1588896"/>
+          <focusable value="false"/>
+          <font name="Gill Sans Ultra Bold" size="14" style="0"/>
+          <foreground color="-13946566"/>
+          <text value="←"/>
+        </properties>
+      </component>
+      <component id="8fab6" class="javax.swing.JButton" binding="btnRightArrow">
+        <constraints>
+          <grid row="2" column="4" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties>
+          <actionCommand value="Button"/>
+          <background color="-1588896"/>
+          <focusable value="false"/>
+          <font name="Gill Sans Ultra Bold" size="14" style="0"/>
+          <foreground color="-13946566"/>
+          <text value="→"/>
+        </properties>
+      </component>
+      <component id="18bdb" class="javax.swing.JButton" binding="btnDelete">
+        <constraints>
+          <grid row="3" column="4" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties>
+          <actionCommand value="Button"/>
+          <background color="-1588896"/>
+          <focusable value="false"/>
+          <font name="Gill Sans Ultra Bold" size="14" style="0"/>
+          <foreground color="-13946566"/>
+          <label value="Del"/>
+          <text value="Del"/>
+        </properties>
+      </component>
+      <component id="82f32" class="javax.swing.JButton" binding="btnClear">
+        <constraints>
+          <grid row="3" column="3" row-span="1" col-span="1" vsize-policy="5" hsize-policy="1" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties>
+          <alignmentX value="0.0"/>
+          <alignmentY value="0.0"/>
+          <background color="-1588896"/>
+          <focusable value="false"/>
+          <font name="Gill Sans Ultra Bold" size="14" style="0"/>
+          <foreground color="-13946566"/>
+          <hideActionText value="false"/>
+          <iconTextGap value="7"/>
+          <text value="Cl"/>
         </properties>
       </component>
     </children>

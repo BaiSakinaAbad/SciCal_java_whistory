@@ -39,6 +39,10 @@ public class JavaCalculator {
     private JButton btnCsc;
     private JButton btnSec;
     private JButton btnCot;
+    // New buttons for left arrow, right arrow, and delete
+    private JButton btnLeftArrow;
+    private JButton btnRightArrow;
+    private JButton btnDelete;
 
     private CalculatorModel model;
     private CalculatorView view;
@@ -50,22 +54,40 @@ public class JavaCalculator {
         view = new CalculatorView(displayPanel);
         controller = new CalculatorController(model, view);
 
-        // Attach the controller to the buttons
+        // Attach the controller to the buttons, including the new ones
         controller.setupButtonListeners(
                 btnClear, btnFour, btnOne, btnNine, btnMultiply, btnSeven, btnZero,
                 btnEight, btnPoint, btnFive, btnTwo, btnThree, btnSix, btnPlus,
                 btnMinus, btnDivide, btnEqual, btnSin, btnCos, btnTan, btnLog,
                 btnLn, btnExponent, btnLeftParen, btnRightParen, btnMemoryStore,
                 btnMemoryRecall, btnMemoryClear, btnMemoryAdd, btnHistory, btnSqrt,
-                btnNthRoot, btnCsc, btnSec, btnCot
+                btnNthRoot, btnCsc, btnSec, btnCot, btnLeftArrow, btnRightArrow, btnDelete
         );
 
         // Configure the displayPanel (JTextField) after the form initializes it
         if (displayPanel != null) {
-            displayPanel.setEditable(false);
+            // Make the displayPanel editable to allow cursor movement
+            displayPanel.setEditable(true);
             displayPanel.setHorizontalAlignment(JTextField.RIGHT);
             displayPanel.setFont(new Font("Arial", Font.PLAIN, 20));
             displayPanel.setText("0");
+            // Add a DocumentListener to sync the model with the displayPanel text
+            displayPanel.getDocument().addDocumentListener(new javax.swing.event.DocumentListener() {
+                @Override
+                public void insertUpdate(javax.swing.event.DocumentEvent e) {
+                    model.setExpression(displayPanel.getText());
+                }
+
+                @Override
+                public void removeUpdate(javax.swing.event.DocumentEvent e) {
+                    model.setExpression(displayPanel.getText());
+                }
+
+                @Override
+                public void changedUpdate(javax.swing.event.DocumentEvent e) {
+                    model.setExpression(displayPanel.getText());
+                }
+            });
         } else {
             System.err.println("displayPanel is null - check form binding");
         }
