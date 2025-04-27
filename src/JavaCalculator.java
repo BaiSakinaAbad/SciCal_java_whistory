@@ -63,7 +63,6 @@ public class JavaCalculator {
 
         // Configure the displayPanel (JTextField) after the form initializes it
         if (displayPanel != null) {
-            // Make the displayPanel editable to allow cursor movement
             displayPanel.setEditable(true);
             displayPanel.setHorizontalAlignment(JTextField.RIGHT);
             displayPanel.setFont(new Font("Arial", Font.PLAIN, 20));
