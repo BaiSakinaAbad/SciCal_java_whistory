@@ -42,6 +42,10 @@ public class JavaCalculator {
     private JButton btnLeftArrow;
     private JButton btnRightArrow;
     private JButton btnDelete;
+    private JLabel gifLabel;
+    private JPanel buttonPanel;
+    private JPanel gifAndButtons;
+    //private JScrollBar scrollBar1;
 
     private CalculatorModel model;
     private CalculatorView view;
