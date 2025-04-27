@@ -52,13 +52,16 @@
           <component id="f3674" class="javax.swing.JLabel" binding="gifLabel">
             <constraints border-constraint="North"/>
             <properties>
-              <background color="-1847081"/>
+              <background color="-65794"/>
               <doubleBuffered value="true"/>
               <enabled value="true"/>
               <focusCycleRoot value="false"/>
               <focusTraversalPolicyProvider value="true"/>
               <foreground color="-1847081"/>
-              <icon value="cat.gif"/>
+              <horizontalAlignment value="0"/>
+              <horizontalTextPosition value="0"/>
+              <icon value="revisedCat.gif"/>
+              <opaque value="true"/>
               <text value=""/>
             </properties>
           </component>
@@ -225,7 +228,7 @@
                   <background color="-1588896"/>
                   <focusCycleRoot value="false"/>
                   <focusable value="false"/>
-                  <font name="Gill Sans Ultra Bold" size="14" style="0"/>
+                  <font name="Goudy Stout" size="18" style="2"/>
                   <foreground color="-13946566"/>
                   <text value="←"/>
                 </properties>
@@ -239,7 +242,7 @@
                   <background color="-1588896"/>
                   <focusCycleRoot value="false"/>
                   <focusable value="false"/>
-                  <font name="Gill Sans Ultra Bold" size="14" style="0"/>
+                  <font name="Goudy Stout" size="18" style="2"/>
                   <foreground color="-13946566"/>
                   <text value="→"/>
                 </properties>
