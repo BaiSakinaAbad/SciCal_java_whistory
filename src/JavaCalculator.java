@@ -39,7 +39,6 @@ public class JavaCalculator {
     private JButton btnCsc;
     private JButton btnSec;
     private JButton btnCot;
-    // New buttons for left arrow, right arrow, and delete
     private JButton btnLeftArrow;
     private JButton btnRightArrow;
     private JButton btnDelete;
@@ -49,12 +48,10 @@ public class JavaCalculator {
     private CalculatorController controller;
 
     public JavaCalculator() {
-        // Initialize MVC components
         model = new CalculatorModel();
         view = new CalculatorView(displayPanel);
         controller = new CalculatorController(model, view);
 
-        // Attach the controller to the buttons, including the new ones
         controller.setupButtonListeners(
                 btnClear, btnFour, btnOne, btnNine, btnMultiply, btnSeven, btnZero,
                 btnEight, btnPoint, btnFive, btnTwo, btnThree, btnSix, btnPlus,
