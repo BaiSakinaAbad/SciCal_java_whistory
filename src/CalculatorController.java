@@ -22,142 +22,169 @@ public class CalculatorController {
         // Number buttons
         btnOne.addActionListener(e -> {
             System.out.println("Button 1 clicked");
-            model.appendToExpression("1");
-            view.setDisplayText(model.getExpression());
+            int cursorPos = view.getCursorPosition();
+            model.insertAtPosition("1", cursorPos);
+            view.setDisplayText(model.getExpression(), cursorPos + 1);
         });
         btnTwo.addActionListener(e -> {
             System.out.println("Button 2 clicked");
-            model.appendToExpression("2");
-            view.setDisplayText(model.getExpression());
+            int cursorPos = view.getCursorPosition();
+            model.insertAtPosition("2", cursorPos);
+            view.setDisplayText(model.getExpression(), cursorPos + 1);
         });
         btnThree.addActionListener(e -> {
             System.out.println("Button 3 clicked");
-            model.appendToExpression("3");
-            view.setDisplayText(model.getExpression());
+            int cursorPos = view.getCursorPosition();
+            model.insertAtPosition("3", cursorPos);
+            view.setDisplayText(model.getExpression(), cursorPos + 1);
         });
         btnFour.addActionListener(e -> {
             System.out.println("Button 4 clicked");
-            model.appendToExpression("4");
-            view.setDisplayText(model.getExpression());
+            int cursorPos = view.getCursorPosition();
+            model.insertAtPosition("4", cursorPos);
+            view.setDisplayText(model.getExpression(), cursorPos + 1);
         });
         btnFive.addActionListener(e -> {
             System.out.println("Button 5 clicked");
-            model.appendToExpression("5");
-            view.setDisplayText(model.getExpression());
+            int cursorPos = view.getCursorPosition();
+            model.insertAtPosition("5", cursorPos);
+            view.setDisplayText(model.getExpression(), cursorPos + 1);
         });
         btnSix.addActionListener(e -> {
             System.out.println("Button 6 clicked");
-            model.appendToExpression("6");
-            view.setDisplayText(model.getExpression());
+            int cursorPos = view.getCursorPosition();
+            model.insertAtPosition("6", cursorPos);
+            view.setDisplayText(model.getExpression(), cursorPos + 1);
         });
         btnSeven.addActionListener(e -> {
             System.out.println("Button 7 clicked");
-            model.appendToExpression("7");
-            view.setDisplayText(model.getExpression());
+            int cursorPos = view.getCursorPosition();
+            model.insertAtPosition("7", cursorPos);
+            view.setDisplayText(model.getExpression(), cursorPos + 1);
         });
         btnEight.addActionListener(e -> {
             System.out.println("Button 8 clicked");
-            model.appendToExpression("8");
-            view.setDisplayText(model.getExpression());
+            int cursorPos = view.getCursorPosition();
+            model.insertAtPosition("8", cursorPos);
+            view.setDisplayText(model.getExpression(), cursorPos + 1);
         });
         btnNine.addActionListener(e -> {
             System.out.println("Button 9 clicked");
-            model.appendToExpression("9");
-            view.setDisplayText(model.getExpression());
+            int cursorPos = view.getCursorPosition();
+            model.insertAtPosition("9", cursorPos);
+            view.setDisplayText(model.getExpression(), cursorPos + 1);
         });
         btnZero.addActionListener(e -> {
             System.out.println("Button 0 clicked");
-            model.appendToExpression("0");
-            view.setDisplayText(model.getExpression());
+            int cursorPos = view.getCursorPosition();
+            model.insertAtPosition("0", cursorPos);
+            view.setDisplayText(model.getExpression(), cursorPos + 1);
         });
 
         // Operation buttons
         btnPlus.addActionListener(e -> {
             System.out.println("Button + clicked");
-            model.appendToExpression("+");
-            view.setDisplayText(model.getExpression());
+            int cursorPos = view.getCursorPosition();
+            model.insertAtPosition("+", cursorPos);
+            view.setDisplayText(model.getExpression(), cursorPos + 1);
         });
         btnMinus.addActionListener(e -> {
             System.out.println("Button - clicked");
-            model.appendToExpression("-");
-            view.setDisplayText(model.getExpression());
+            int cursorPos = view.getCursorPosition();
+            model.insertAtPosition("-", cursorPos);
+            view.setDisplayText(model.getExpression(), cursorPos + 1);
         });
         btnMultiply.addActionListener(e -> {
             System.out.println("Button * clicked");
-            model.appendToExpression("*");
-            view.setDisplayText(model.getExpression());
+            int cursorPos = view.getCursorPosition();
+            model.insertAtPosition("*", cursorPos);
+            view.setDisplayText(model.getExpression(), cursorPos + 1);
         });
         btnDivide.addActionListener(e -> {
             System.out.println("Button / clicked");
-            model.appendToExpression("/");
-            view.setDisplayText(model.getExpression());
+            int cursorPos = view.getCursorPosition();
+            model.insertAtPosition("/", cursorPos);
+            view.setDisplayText(model.getExpression(), cursorPos + 1);
         });
         btnExponent.addActionListener(e -> {
             System.out.println("Button ^ clicked");
-            model.appendToExpression("^");
-            view.setDisplayText(model.getExpression());
+            int cursorPos = view.getCursorPosition();
+            model.insertAtPosition("^", cursorPos);
+            view.setDisplayText(model.getExpression(), cursorPos + 1);
         });
         btnLeftParen.addActionListener(e -> {
             System.out.println("Button ( clicked");
-            model.appendToExpression("(");
-            view.setDisplayText(model.getExpression());
+            int cursorPos = view.getCursorPosition();
+            model.insertAtPosition("(", cursorPos);
+            view.setDisplayText(model.getExpression(), cursorPos + 1);
         });
         btnRightParen.addActionListener(e -> {
             System.out.println("Button ) clicked");
-            model.appendToExpression(")");
-            view.setDisplayText(model.getExpression());
+            int cursorPos = view.getCursorPosition();
+            model.insertAtPosition(")", cursorPos);
+            view.setDisplayText(model.getExpression(), cursorPos + 1);
         });
 
         // Function buttons
         btnSin.addActionListener(e -> {
             System.out.println("Button sin clicked");
-            model.appendToExpression("sin(");
-            view.setDisplayText(model.getExpression());
+            int cursorPos = view.getCursorPosition();
+            model.insertAtPosition("sin(", cursorPos);
+            view.setDisplayText(model.getExpression(), cursorPos + 4);
         });
         btnCos.addActionListener(e -> {
             System.out.println("Button cos clicked");
-            model.appendToExpression("cos(");
-            view.setDisplayText(model.getExpression());
+            int cursorPos = view.getCursorPosition();
+            model.insertAtPosition("cos(", cursorPos);
+            view.setDisplayText(model.getExpression(), cursorPos + 4);
         });
         btnTan.addActionListener(e -> {
             System.out.println("Button tan clicked");
-            model.appendToExpression("tan(");
-            view.setDisplayText(model.getExpression());
+            int cursorPos = view.getCursorPosition();
+            model.insertAtPosition("tan(", cursorPos);
+            view.setDisplayText(model.getExpression(), cursorPos + 4);
         });
         btnLog.addActionListener(e -> {
             System.out.println("Button log clicked");
-            model.appendToExpression("log(");
-            view.setDisplayText(model.getExpression());
+            int cursorPos = view.getCursorPosition();
+            model.insertAtPosition("log(", cursorPos);
+            view.setDisplayText(model.getExpression(), cursorPos + 4);
         });
         btnLn.addActionListener(e -> {
             System.out.println("Button ln clicked");
-            model.appendToExpression("ln(");
-            view.setDisplayText(model.getExpression());
+            int cursorPos = view.getCursorPosition();
+            model.insertAtPosition("ln(", cursorPos);
+            view.setDisplayText(model.getExpression(), cursorPos + 3);
         });
         btnSqrt.addActionListener(e -> {
             System.out.println("Button sqrt clicked");
-            model.appendToExpression("sqrt(");
-            view.setDisplayText(model.getExpression());
+            int cursorPos = view.getCursorPosition();
+            model.insertAtPosition("sqrt(", cursorPos);
+            view.setDisplayText(model.getExpression(), cursorPos + 5);
         });
         btnNthRoot.addActionListener(e -> {
             System.out.println("Button nrt clicked");
-            model.appendToExpression("nrt");
-            view.setDisplayText(model.getExpression());
+            int cursorPos = view.getCursorPosition();
+            model.insertAtPosition("nrt", cursorPos);
+            view.setDisplayText(model.getExpression(), cursorPos + 3);
         });
         btnCsc.addActionListener(e -> {
             System.out.println("Button csc clicked");
-            model.appendToExpression("csc(");
-            view.setDisplayText(model.getExpression());
+            int cursorPos = view.getCursorPosition();
+            model.insertAtPosition("csc(", cursorPos);
+            view.setDisplayText(model.getExpression(), cursorPos + 4);
         });
         btnSec.addActionListener(e -> {
             System.out.println("Button sec clicked");
-            model.appendToExpression("sec(");
-            view.setDisplayText(model.getExpression());
+            int cursorPos = view.getCursorPosition();
+            model.insertAtPosition("sec(", cursorPos);
+            view.setDisplayText(model.getExpression(), cursorPos + 4);
         });
         btnCot.addActionListener(e -> {
             System.out.println("Button cot clicked");
-            model.appendToExpression("cot(");
-            view.setDisplayText(model.getExpression());
+            int cursorPos = view.getCursorPosition();
+            model.insertAtPosition("cot(", cursorPos);
+            view.setDisplayText(model.getExpression(), cursorPos + 4);
         });
 
         // Equal button to evaluate the expression and store in history
@@ -169,9 +196,9 @@ public class CalculatorController {
                 String operation = model.getExpression() + " = " + result;
                 model.addToHistory(operation);
                 model.setExpression(String.valueOf(result));
-                view.setDisplayText(model.getExpression());
+                view.setDisplayText(model.getExpression(), model.getExpression().length());
             } catch (Exception ex) {
-                view.setDisplayText("Error");
+                view.setDisplayText("Error", 5);
                 model.setExpression("");
             }
         });
@@ -180,14 +207,15 @@ public class CalculatorController {
         btnClear.addActionListener(e -> {
             System.out.println("Button Clear clicked");
             model.clearExpression();
-            view.setDisplayText("");
+            view.setDisplayText("", 0);
         });
 
         // Decimal point
         btnPoint.addActionListener(e -> {
             System.out.println("Button . clicked");
-            model.appendToExpression(".");
-            view.setDisplayText(model.getExpression());
+            int cursorPos = view.getCursorPosition();
+            model.insertAtPosition(".", cursorPos);
+            view.setDisplayText(model.getExpression(), cursorPos + 1);
         });
 
         // Memory buttons
@@ -197,18 +225,20 @@ public class CalculatorController {
                 double value = Double.parseDouble(model.getExpression());
                 model.storeMemory(value);
             } catch (NumberFormatException ex) {
-                view.setDisplayText("Error");
+                view.setDisplayText("Error", 5);
             }
         });
         btnMemoryRecall.addActionListener(e -> {
             System.out.println("Button MR clicked");
-            model.appendToExpression(model.recallMemory());
-            view.setDisplayText(model.getExpression());
+            int cursorPos = view.getCursorPosition();
+            String recalledValue = model.recallMemory();
+            model.insertAtPosition(recalledValue, cursorPos);
+            view.setDisplayText(model.getExpression(), cursorPos + recalledValue.length());
         });
         btnMemoryClear.addActionListener(e -> {
             System.out.println("Button MC clicked");
             model.clearMemory();
-            view.setDisplayText("Memory Cleared");
+            view.setDisplayText("Memory Cleared", 14);
         });
         btnMemoryAdd.addActionListener(e -> {
             System.out.println("Button M+ clicked");
@@ -216,7 +246,7 @@ public class CalculatorController {
                 double value = Double.parseDouble(model.getExpression());
                 model.addToMemory(value);
             } catch (NumberFormatException ex) {
-                view.setDisplayText("Error");
+                view.setDisplayText("Error", 5);
             }
         });
 
@@ -226,19 +256,19 @@ public class CalculatorController {
             view.showHistoryDialog(model.getHistory());
         });
 
-        // New functionality: Left arrow button
+        // Left arrow button
         btnLeftArrow.addActionListener(e -> {
             System.out.println("Button Left Arrow clicked");
             view.moveCursorLeft();
         });
 
-        // New functionality: Right arrow button
+        // Right arrow button
         btnRightArrow.addActionListener(e -> {
             System.out.println("Button Right Arrow clicked");
             view.moveCursorRight();
         });
 
-        // New functionality: Delete button (backspace)
+        // Delete button
         btnDelete.addActionListener(e -> {
             System.out.println("Button Delete clicked");
             view.deleteCharBeforeCursor();

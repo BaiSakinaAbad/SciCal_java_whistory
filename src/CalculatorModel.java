@@ -21,9 +21,15 @@ public class CalculatorModel {
         this.expression = expression;
     }
 
-    // Append to expression
-    public void appendToExpression(String value) {
-        this.expression += value;
+    // Insert a value at a specific position in the expression
+    public void insertAtPosition(String value, int position) {
+        if (position < 0 || position > expression.length()) {
+            // If the position is out of bounds, append to the end
+            expression += value;
+        } else {
+            // Insert the value at the specified position
+            expression = expression.substring(0, position) + value + expression.substring(position);
+        }
     }
 
     // Clear expression

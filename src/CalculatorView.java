@@ -9,11 +9,25 @@ public class CalculatorView {
         this.displayPanel = displayPanel;
     }
 
-    // Method to update the display
-    public void setDisplayText(String text) {
+    // Method to update the display while preserving the cursor position
+    public void setDisplayText(String text, int cursorPosition) {
         if (displayPanel != null) {
             displayPanel.setText(text);
+            // Ensure the cursor position is within bounds
+            int newPosition = Math.min(cursorPosition, text.length());
+            displayPanel.setCaretPosition(newPosition);
+            // Ensure the cursor is visible by requesting focus
+            displayPanel.requestFocusInWindow();
+            displayPanel.getCaret().setVisible(true);
         }
+    }
+
+    // Method to get the current cursor position
+    public int getCursorPosition() {
+        if (displayPanel != null) {
+            return displayPanel.getCaretPosition();
+        }
+        return 0;
     }
 
     // Method to show history dialog
@@ -47,6 +61,8 @@ public class CalculatorView {
             int pos = displayPanel.getCaretPosition();
             if (pos > 0) {
                 displayPanel.setCaretPosition(pos - 1);
+                displayPanel.requestFocusInWindow();
+                displayPanel.getCaret().setVisible(true);
             }
         }
     }
@@ -58,6 +74,8 @@ public class CalculatorView {
             String text = displayPanel.getText();
             if (pos < text.length()) {
                 displayPanel.setCaretPosition(pos + 1);
+                displayPanel.requestFocusInWindow();
+                displayPanel.getCaret().setVisible(true);
             }
         }
     }
@@ -71,6 +89,8 @@ public class CalculatorView {
                 String newText = text.substring(0, pos - 1) + text.substring(pos);
                 displayPanel.setText(newText);
                 displayPanel.setCaretPosition(pos - 1);
+                displayPanel.requestFocusInWindow();
+                displayPanel.getCaret().setVisible(true);
             }
         }
     }
