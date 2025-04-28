@@ -1,3 +1,5 @@
+package calculator;
+// handle memory functions, add(currently hidden), store, recall, clear
 public class MemoryStorage {
     private double memoryValue;
 

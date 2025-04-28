@@ -1,3 +1,9 @@
+package calculator.ui;
+
+import calculator.CalculatorController;
+import calculator.CalculatorModel;
+import calculator.CalculatorView;
+
 import javax.swing.*;
 import java.awt.*;
 
@@ -45,7 +51,6 @@ public class JavaCalculator {
     private JLabel gifLabel;
     private JPanel buttonPanel;
     private JPanel gifAndButtons;
-    //private JScrollBar scrollBar1;
 
     private CalculatorModel model;
     private CalculatorView view;
@@ -65,13 +70,11 @@ public class JavaCalculator {
                 btnNthRoot, btnCsc, btnSec, btnCot, btnLeftArrow, btnRightArrow, btnDelete
         );
 
-        // Configure the displayPanel (JTextField) after the form initializes it
         if (displayPanel != null) {
             displayPanel.setEditable(true);
             displayPanel.setHorizontalAlignment(JTextField.RIGHT);
             displayPanel.setFont(new Font("Arial", Font.PLAIN, 20));
             displayPanel.setText("0");
-            // Add a DocumentListener to sync the model with the displayPanel text
             displayPanel.getDocument().addDocumentListener(new javax.swing.event.DocumentListener() {
                 @Override
                 public void insertUpdate(javax.swing.event.DocumentEvent e) {
@@ -90,6 +93,16 @@ public class JavaCalculator {
             });
         } else {
             System.err.println("displayPanel is null - check form binding");
+        }
+
+        if (gifLabel != null) {
+            try {
+                gifLabel.setIcon(new ImageIcon(getClass().getResource("/resources/cat.gif")));
+            } catch (Exception e) {
+                System.err.println("Failed to load GIF: " + e.getMessage());
+            }
+        } else {
+            System.err.println("gifLabel is null - check form binding");
         }
     }
 

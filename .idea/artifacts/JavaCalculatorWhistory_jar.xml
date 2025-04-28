@@ -1,0 +1,9 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="JavaCalculatorWhistory:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/JavaCalculatorWhistory_jar</output-path>
+    <root id="archive" name="JavaCalculatorWhistory.jar">
+      <element id="module-output" name="JavaCalculatorWhistory" />
+      <element id="file-copy" path="$PROJECT_DIR$/src/resources/revisedCat.gif" />
+    </root>
+  </artifact>
+</component>

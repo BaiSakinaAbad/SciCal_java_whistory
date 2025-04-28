@@ -1,36 +1,31 @@
+package calculator;
+
 import javax.swing.*;
 import java.awt.*;
 import java.util.List;
+// update displayPanel, manage cursor position and movement(l and r), shows history, char deletion
 
 public class CalculatorView {
-    private JTextField displayPanel;
+    private final JTextField displayPanel;
 
     public CalculatorView(JTextField displayPanel) {
         this.displayPanel = displayPanel;
     }
 
-    // Method to update the display while preserving the cursor position
     public void setDisplayText(String text, int cursorPosition) {
         if (displayPanel != null) {
             displayPanel.setText(text);
-            // Ensure the cursor position is within bounds
             int newPosition = Math.min(cursorPosition, text.length());
             displayPanel.setCaretPosition(newPosition);
-            // Ensure the cursor is visible by requesting focus
             displayPanel.requestFocusInWindow();
             displayPanel.getCaret().setVisible(true);
         }
     }
 
-    // Method to get the current cursor position
     public int getCursorPosition() {
-        if (displayPanel != null) {
-            return displayPanel.getCaretPosition();
-        }
-        return 0;
+        return displayPanel != null ? displayPanel.getCaretPosition() : 0;
     }
 
-    // Method to show history dialog
     public void showHistoryDialog(List<String> history) {
         JDialog historyDialog = new JDialog();
         historyDialog.setTitle("Calculation History");
@@ -55,7 +50,6 @@ public class CalculatorView {
         historyDialog.setVisible(true);
     }
 
-    // Method to move the cursor left
     public void moveCursorLeft() {
         if (displayPanel != null) {
             int pos = displayPanel.getCaretPosition();
@@ -67,7 +61,6 @@ public class CalculatorView {
         }
     }
 
-    // Method to move the cursor right
     public void moveCursorRight() {
         if (displayPanel != null) {
             int pos = displayPanel.getCaretPosition();
@@ -80,7 +73,6 @@ public class CalculatorView {
         }
     }
 
-    // Method to delete the character before the cursor
     public void deleteCharBeforeCursor() {
         if (displayPanel != null) {
             int pos = displayPanel.getCaretPosition();

@@ -1,69 +1,9 @@
-import java.util.ArrayList;
-import java.util.List;
+package calculator;
+// IMPORTATNT! DO NOT CHANGE ANYTHING. PLEASE LANG PO
+// handles the precedence logic. Uses stack to perform postfix algo
 import java.util.Stack;
 
-public class CalculatorModel {
-    private String expression = "";
-    private MemoryStorage memory;
-    private List<String> history;
-
-    public CalculatorModel() {
-        memory = new MemoryStorage();
-        history = new ArrayList<>();
-    }
-
-    // Getters and setters for expression
-    public String getExpression() {
-        return expression;
-    }
-
-    public void setExpression(String expression) {
-        this.expression = expression;
-    }
-
-    // Insert a value at a specific position in the expression
-    public void insertAtPosition(String value, int position) {
-        if (position < 0 || position > expression.length()) {
-            // If the position is out of bounds, append to the end
-            expression += value;
-        } else {
-            // Insert the value at the specified position
-            expression = expression.substring(0, position) + value + expression.substring(position);
-        }
-    }
-
-    // Clear expression
-    public void clearExpression() {
-        this.expression = "";
-    }
-
-    // History management
-    public void addToHistory(String operation) {
-        history.add(operation);
-    }
-
-    public List<String> getHistory() {
-        return new ArrayList<>(history);
-    }
-
-    // Memory operations
-    public void storeMemory(double value) {
-        memory.store(value);
-    }
-
-    public String recallMemory() {
-        return memory.recall();
-    }
-
-    public void clearMemory() {
-        memory.clear();
-    }
-
-    public void addToMemory(double value) {
-        memory.add(value);
-    }
-
-    // Helper method to determine operator precedence
+public class ExpressionParser {
     private int getPrecedence(char op) {
         switch (op) {
             case '+':
@@ -73,19 +13,17 @@ public class CalculatorModel {
             case '/':
                 return 2;
             case '^':
-            case 'n': // For nth root (x√y)
+            case 'n':
                 return 3;
             default:
                 return 0;
         }
     }
 
-    // Check if a character is an operator or parenthesis
     private boolean isOperator(char c) {
         return c == '+' || c == '-' || c == '*' || c == '/' || c == '^' || c == 'n';
     }
 
-    // Convert infix expression to postfix (Shunting Yard Algorithm with parentheses and functions)
     public String toPostfix(String infix) {
         Stack<Character> operators = new Stack<>();
         Stack<String> functions = new Stack<>();
@@ -114,7 +52,7 @@ public class CalculatorModel {
                     postfix.append(operators.pop()).append(" ");
                 }
                 if (!operators.isEmpty()) {
-                    operators.pop(); // Remove '('
+                    operators.pop();
                 }
                 if (!functions.isEmpty()) {
                     postfix.append(functions.pop()).append(" ");
@@ -127,15 +65,14 @@ public class CalculatorModel {
                 while (!operators.isEmpty() && operators.peek() != '(' && getPrecedence(operators.peek()) >= getPrecedence(c)) {
                     postfix.append(operators.pop()).append(" ");
                 }
-                operators.push(c == 'n' ? 'n' : c); // Handle nth root
+                operators.push(c == 'n' ? 'n' : c);
             } else if (Character.isLetter(c)) {
-                // Handle functions like sin, cos, tan, log, ln, sqrt, csc, sec, cot
                 StringBuilder func = new StringBuilder();
                 while (i < infix.length() && Character.isLetter(infix.charAt(i))) {
                     func.append(infix.charAt(i));
                     i++;
                 }
-                i--; // Step back one char
+                i--;
                 functions.push(func.toString());
                 afterFunction = true;
             } else {
@@ -157,7 +94,6 @@ public class CalculatorModel {
         return postfix.toString().trim();
     }
 
-    // Evaluate postfix expression
     public double evaluatePostfix(String postfix) {
         Stack<Double> stack = new Stack<>();
         String[] tokens = postfix.split("\\s+");
@@ -204,7 +140,7 @@ public class CalculatorModel {
                         stack.push(1.0 / tanVal);
                         break;
                 }
-            } else if (token.equals("n")) { // Handle nth root (x√y)
+            } else if (token.equals("n")) {
                 double y = stack.pop();
                 double x = stack.pop();
                 stack.push(Math.pow(y, 1.0 / x));

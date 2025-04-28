@@ -1,8 +1,0 @@
-<component name="ArtifactManager">
-  <artifact type="jar" name="Practice_Calculator:jar">
-    <output-path>$PROJECT_DIR$/out/artifacts/Practice_Calculator_jar</output-path>
-    <root id="archive" name="Practice_Calculator.jar">
-      <element id="module-output" name="Practice_Calculator" />
-    </root>
-  </artifact>
-</component>
