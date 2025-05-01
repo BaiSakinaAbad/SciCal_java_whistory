@@ -52,7 +52,7 @@ This scientific calculator is a final project for the Object-Oriented Programmin
 
 ## Preview Screenshot
 Below is a preview of the calculator's interface. 
-![Scientific Calculator Preview](resources/CalaculatorPreview.png)
+![Scientific Calculator Preview](src/resources/CalaculatorPreview.png)
 
 ## Acknowledgments
 - Developed by Bai Sakina Abad as part of the OOP course at New Era University.
