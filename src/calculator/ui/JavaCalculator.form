@@ -701,7 +701,7 @@
                   <font name="Gill Sans Ultra Bold" size="14" style="0"/>
                   <foreground color="-2497055"/>
                   <text value="M+"/>
-                  <visible value="true"/>
+                  <visible value="false"/>
                 </properties>
               </component>
             </children>
