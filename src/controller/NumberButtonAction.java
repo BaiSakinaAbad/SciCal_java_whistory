@@ -1,5 +1,8 @@
-package calculator;
+package controller;
 // using buttonAction, takes a number and insert it at the current position of the cursor and und update the display panel
+
+import model.CalculatorModel;
+import view.CalculatorView;
 
 public class NumberButtonAction implements ButtonAction {
     private final String number;

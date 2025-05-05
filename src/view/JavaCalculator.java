@@ -1,9 +1,7 @@
-package calculator.ui;
+package view;
 
-import calculator.CalculatorController;
-import calculator.CalculatorModel;
-import calculator.CalculatorView;
-
+import controller.CalculatorController;
+import model.CalculatorModel;
 import javax.swing.*;
 import java.awt.*;
 
@@ -93,16 +91,6 @@ public class JavaCalculator {
             });
         } else {
             System.err.println("displayPanel is null - check form binding");
-        }
-
-        if (gifLabel != null) {
-            try {
-                gifLabel.setIcon(new ImageIcon(getClass().getResource("/resources/cat.gif")));
-            } catch (Exception e) {
-                System.err.println("Failed to load GIF: " + e.getMessage());
-            }
-        } else {
-            System.err.println("gifLabel is null - check form binding");
         }
     }
 

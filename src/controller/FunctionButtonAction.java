@@ -1,4 +1,7 @@
-package calculator;
+package controller;
+
+import model.CalculatorModel;
+import view.CalculatorView;
 
 public class FunctionButtonAction implements ButtonAction {
     private final String function;

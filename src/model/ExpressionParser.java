@@ -1,4 +1,4 @@
-package calculator;
+package model;
 
 // IMPORTATNT! DO NOT CHANGE ANYTHING.
 // handles the precedence logic. Uses stack to perform postfix algo

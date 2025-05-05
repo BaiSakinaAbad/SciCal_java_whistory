@@ -1,11 +1,14 @@
-package calculator;
+package controller;
 
+import model.CalculatorModel;
+import view.CalculatorView;
 import javax.swing.*;
 import java.util.HashMap;
 import java.util.Map;
+
 // Sets up listeners using a map of ButtonAction objects,
 // manages actions for number, operator, function, and special buttons
-// and updates the model and view. note para hindi ako malito
+// and updates the model and view.
 
 public class CalculatorController {
     private final CalculatorModel model;
@@ -174,7 +177,7 @@ public class CalculatorController {
         buttonActions.put(btnLeftArrow, new ButtonAction() {
             @Override
             public void execute(CalculatorModel model, CalculatorView view, int cursorPosition) {
-                view.moveCursorLeft();
+               view.moveCursorLeft();
             }
 
             @Override
