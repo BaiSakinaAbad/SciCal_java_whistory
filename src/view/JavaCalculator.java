@@ -6,7 +6,7 @@ import javax.swing.*;
 import java.awt.*;
 
 public class JavaCalculator {
-    private JPanel JavaCalculator;
+    public JPanel JavaCalculator;
     private JTextField displayPanel;
     private JButton btnClear;
     private JButton btnFour;
@@ -94,13 +94,13 @@ public class JavaCalculator {
         }
     }
 
-    public static void main(String[] args) {
-        JFrame frame = new JFrame("Scientific Calculator");
-        frame.setContentPane(new JavaCalculator().JavaCalculator);
-        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        frame.pack();
-        frame.setVisible(true);
-    }
+//    public static void main(String[] args) {
+//        JFrame frame = new JFrame("Scientific Calculator");
+//        frame.setContentPane(new JavaCalculator().JavaCalculator);
+//        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+//        frame.pack();
+//        frame.setVisible(true);
+//    }
 
     private void createUIComponents() {
         JavaCalculator = new JPanel();

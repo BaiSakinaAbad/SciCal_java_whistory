@@ -2,6 +2,8 @@ package controller;
 
 import model.CalculatorModel;
 import view.CalculatorView;
+import view.JavaCalculator;
+
 import javax.swing.*;
 import java.util.HashMap;
 import java.util.Map;
