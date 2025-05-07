@@ -3,7 +3,7 @@ package controller;
 import model.CalculatorModel;
 import view.CalculatorView;
 
-// Using buttonAction to handle operator, update the displaypanel
+// Using buttonAction to handle operator
 public class OperatorButtonAction implements ButtonAction {
     private final String operator;
 
