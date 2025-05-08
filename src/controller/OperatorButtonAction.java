@@ -7,6 +7,8 @@ import view.CalculatorView;
 public class OperatorButtonAction implements ButtonAction {
     private final String operator;
 
+
+    // operator button action
     public OperatorButtonAction(String operator) {
         this.operator = operator;
     }
@@ -21,4 +23,5 @@ public class OperatorButtonAction implements ButtonAction {
     public void actionPerformed(java.awt.event.ActionEvent e) {
         System.out.println("Button " + operator + " clicked");
     }
+
 }

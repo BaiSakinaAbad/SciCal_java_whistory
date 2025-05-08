@@ -39,7 +39,7 @@ public class JavaCalculator {
             displayPanel.setEditable(true);
             displayPanel.setHorizontalAlignment(JTextField.RIGHT);
             displayPanel.setFont(new Font("Arial", Font.PLAIN, 20));
-            displayPanel.setText("0");
+            displayPanel.setText("(˶˃ ᵕ ˂˶)");
             displayPanel.getDocument().addDocumentListener(new javax.swing.event.DocumentListener() {
                 @Override
                 public void insertUpdate(javax.swing.event.DocumentEvent e) {

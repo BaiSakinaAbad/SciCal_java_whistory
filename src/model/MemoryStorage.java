@@ -8,6 +8,10 @@ public class MemoryStorage {
         memoryValue = 0.0;
     }
 
+//    public void PrintMr(){
+//        System.out.println("Button MR clicked");
+//    }
+
     public void store(double value) {
         memoryValue = value;
     }
