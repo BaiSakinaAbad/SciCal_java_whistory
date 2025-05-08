@@ -2,25 +2,18 @@ package controller;
 
 import model.CalculatorModel;
 import view.CalculatorView;
-import view.JavaCalculator;
-
 import javax.swing.*;
 import java.util.HashMap;
 import java.util.Map;
-
-// Sets up listeners using a map of ButtonAction objects,
-// manages actions for number, operator, function, and special buttons
-// and updates the model and view.
-
+// buttonActions
 public class CalculatorController {
     private final CalculatorModel model;
     private final CalculatorView view;
-    private final Map<JButton, ButtonAction> buttonActions;
+    private final Map<JButton, ButtonAction> buttonActions = new HashMap<>();
 
     public CalculatorController(CalculatorModel model, CalculatorView view) {
         this.model = model;
         this.view = view;
-        this.buttonActions = new HashMap<>();
     }
 
     public void setupButtonListeners(
@@ -34,190 +27,65 @@ public class CalculatorController {
             JButton btnLeftArrow, JButton btnRightArrow, JButton btnDelete
     ) {
         // Number buttons
-        buttonActions.put(btnZero, new NumberButtonAction("0"));
-        buttonActions.put(btnOne, new NumberButtonAction("1"));
-        buttonActions.put(btnTwo, new NumberButtonAction("2"));
-        buttonActions.put(btnThree, new NumberButtonAction("3"));
-        buttonActions.put(btnFour, new NumberButtonAction("4"));
-        buttonActions.put(btnFive, new NumberButtonAction("5"));
-        buttonActions.put(btnSix, new NumberButtonAction("6"));
-        buttonActions.put(btnSeven, new NumberButtonAction("7"));
-        buttonActions.put(btnEight, new NumberButtonAction("8"));
-        buttonActions.put(btnNine, new NumberButtonAction("9"));
-        buttonActions.put(btnPoint, new NumberButtonAction("."));
+        setupButtons(new JButton[]{btnZero, btnOne, btnTwo, btnThree, btnFour, btnFive, btnSix, btnSeven, btnEight, btnNine, btnPoint},
+                new String[]{"0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "."}, NumberButtonAction::new);
 
         // Operator buttons
-        buttonActions.put(btnPlus, new OperatorButtonAction("+"));
-        buttonActions.put(btnMinus, new OperatorButtonAction("-"));
-        buttonActions.put(btnMultiply, new OperatorButtonAction("*"));
-        buttonActions.put(btnDivide, new OperatorButtonAction("/"));
-        buttonActions.put(btnExponent, new OperatorButtonAction("^"));
-        buttonActions.put(btnLeftParen, new OperatorButtonAction("("));
-        buttonActions.put(btnRightParen, new OperatorButtonAction(")"));
+        setupButtons(new JButton[]{btnPlus, btnMinus, btnMultiply, btnDivide, btnExponent, btnLeftParen, btnRightParen},
+                new String[]{"+", "-", "*", "/", "^", "(", ")"}, OperatorButtonAction::new);
 
-        // Function buttons
-        buttonActions.put(btnSin, new FunctionButtonAction("sin(", 4));
-        buttonActions.put(btnCos, new FunctionButtonAction("cos(", 4));
-        buttonActions.put(btnTan, new FunctionButtonAction("tan(", 4));
-        buttonActions.put(btnLog, new FunctionButtonAction("log(", 4));
-        buttonActions.put(btnLn, new FunctionButtonAction("ln(", 3));
-        buttonActions.put(btnSqrt, new FunctionButtonAction("sqrt(", 5));
-        buttonActions.put(btnNthRoot, new FunctionButtonAction("nrt", 3));
-        buttonActions.put(btnCsc, new FunctionButtonAction("csc(", 4));
-        buttonActions.put(btnSec, new FunctionButtonAction("sec(", 4));
-        buttonActions.put(btnCot, new FunctionButtonAction("cot(", 4));
+        // Function buttons with offsets
+        setupFunctionButtons(new JButton[]{btnSin, btnCos, btnTan, btnLog, btnLn, btnSqrt, btnNthRoot, btnCsc, btnSec, btnCot},
+                new String[]{"sin(", "cos(", "tan(", "log(", "ln(", "sqrt(", "nrt", "csc(", "sec(", "cot("},
+                new int[]{4, 4, 4, 4, 3, 5, 3, 4, 4, 4});
 
         // Special actions
-        buttonActions.put(btnClear, new ButtonAction() {
-            @Override
-            public void execute(CalculatorModel model, CalculatorView view, int cursorPosition) {
-                model.clearExpression();
-                view.setDisplayText("", 0);
-            }
+        buttonActions.put(btnClear, new CalculationAndResetActions.ClearButtonAction());
+        buttonActions.put(btnEqual, new CalculationAndResetActions.EqualButtonAction());
+        buttonActions.put(btnMemoryStore, new MemoryAndHistoryActions.MemoryStoreButtonAction());
+        buttonActions.put(btnMemoryRecall, new MemoryAndHistoryActions.MemoryRecallButtonAction());
+        buttonActions.put(btnMemoryClear, new MemoryAndHistoryActions.MemoryClearButtonAction());
+        buttonActions.put(btnMemoryAdd, new MemoryAndHistoryActions.MemoryAddButtonAction());
+        buttonActions.put(btnHistory, new MemoryAndHistoryActions.HistoryButtonAction());
 
-            @Override
-            public void actionPerformed(java.awt.event.ActionEvent e) {
-                System.out.println("Button Clear clicked");
-            }
-        });
+        // Arrow and delete actions using concise actions
+        buttonActions.put(btnLeftArrow, createAction(CalculatorView::moveCursorLeft, "Button Left Arrow clicked"));
+        buttonActions.put(btnRightArrow, createAction(CalculatorView::moveCursorRight, "Button Right Arrow clicked"));
+        buttonActions.put(btnDelete, new CalculationAndResetActions.DeleteButtonAction());
 
-        buttonActions.put(btnEqual, new ButtonAction() {
-            @Override
-            public void execute(CalculatorModel model, CalculatorView view, int cursorPosition) {
-                try {
-                    String postfix = model.toPostfix(model.getExpression());
-                    double result = model.evaluatePostfix(postfix);
-                    String operation = model.getExpression() + " = " + result;
-                    model.addToHistory(operation);
-                    model.setExpression(String.valueOf(result));
-                    view.setDisplayText(model.getExpression(), model.getExpression().length());
-                } catch (Exception ex) {
-                    view.setDisplayText("Error", 5);
-                    model.setExpression("");
-                }
-            }
+        // Attach listeners
+        buttonActions.forEach((btn, action) -> btn.addActionListener(e -> {
+            action.actionPerformed(e);
+            action.execute(model, view, view.getCursorPosition());
+        }));
+    }
 
-            @Override
-            public void actionPerformed(java.awt.event.ActionEvent e) {
-                System.out.println("Button = clicked");
-            }
-        });
-
-        buttonActions.put(btnMemoryStore, new ButtonAction() {
-            @Override
-            public void execute(CalculatorModel model, CalculatorView view, int cursorPosition) {
-                try {
-                    double value = Double.parseDouble(model.getExpression());
-                    model.storeMemory(value);
-                } catch (NumberFormatException ex) {
-                    view.setDisplayText("Error", 5);
-                }
-            }
-
-            @Override
-            public void actionPerformed(java.awt.event.ActionEvent e) {
-                System.out.println("Button MS clicked");
-            }
-        });
-
-        buttonActions.put(btnMemoryRecall, new ButtonAction() {
-            @Override
-            public void execute(CalculatorModel model, CalculatorView view, int cursorPosition) {
-                String recalledValue = model.recallMemory();
-                model.insertAtPosition(recalledValue, cursorPosition);
-                view.setDisplayText(model.getExpression(), cursorPosition + recalledValue.length());
-            }
-
-            @Override
-            public void actionPerformed(java.awt.event.ActionEvent e) {
-                System.out.println("Button MR clicked");
-            }
-        });
-
-        buttonActions.put(btnMemoryClear, new ButtonAction() {
-            @Override
-            public void execute(CalculatorModel model, CalculatorView view, int cursorPosition) {
-                model.clearMemory();
-                view.setDisplayText("Memory Cleared", 14);
-            }
-
-            @Override
-            public void actionPerformed(java.awt.event.ActionEvent e) {
-                System.out.println("Button MC clicked");
-            }
-        });
-
-        buttonActions.put(btnMemoryAdd, new ButtonAction() {
-            @Override
-            public void execute(CalculatorModel model, CalculatorView view, int cursorPosition) {
-                try {
-                    double value = Double.parseDouble(model.getExpression());
-                    model.addToMemory(value);
-                } catch (NumberFormatException ex) {
-                    view.setDisplayText("Error", 5);
-                }
-            }
-
-            @Override
-            public void actionPerformed(java.awt.event.ActionEvent e) {
-                System.out.println("Button M+ clicked");
-            }
-        });
-
-        buttonActions.put(btnHistory, new ButtonAction() {
-            @Override
-            public void execute(CalculatorModel model, CalculatorView view, int cursorPosition) {
-                view.showHistoryDialog(model.getHistory());
-            }
-
-            @Override
-            public void actionPerformed(java.awt.event.ActionEvent e) {
-                System.out.println("Button Hist clicked");
-            }
-        });
-
-        buttonActions.put(btnLeftArrow, new ButtonAction() {
-            @Override
-            public void execute(CalculatorModel model, CalculatorView view, int cursorPosition) {
-               view.moveCursorLeft();
-            }
-
-            @Override
-            public void actionPerformed(java.awt.event.ActionEvent e) {
-                System.out.println("Button Left Arrow clicked");
-            }
-        });
-
-        buttonActions.put(btnRightArrow, new ButtonAction() {
-            @Override
-            public void execute(CalculatorModel model, CalculatorView view, int cursorPosition) {
-                view.moveCursorRight();
-            }
-
-            @Override
-            public void actionPerformed(java.awt.event.ActionEvent e) {
-                System.out.println("Button Right Arrow clicked");
-            }
-        });
-
-        buttonActions.put(btnDelete, new ButtonAction() {
-            @Override
-            public void execute(CalculatorModel model, CalculatorView view, int cursorPosition) {
-                view.deleteCharBeforeCursor();
-            }
-
-            @Override
-            public void actionPerformed(java.awt.event.ActionEvent e) {
-                System.out.println("Button Delete clicked");
-            }
-        });
-
-
-        for (Map.Entry<JButton, ButtonAction> entry : buttonActions.entrySet()) {
-            entry.getKey().addActionListener(e -> {
-                entry.getValue().actionPerformed(e);
-                entry.getValue().execute(model, view, view.getCursorPosition());
-            });
+    // Helper method for number and operator buttons
+    private void setupButtons(JButton[] buttons, String[] values, java.util.function.Function<String, ButtonAction> actionCreator) {
+        for (int i = 0; i < buttons.length; i++) {
+            buttonActions.put(buttons[i], actionCreator.apply(values[i]));
         }
+    }
+
+    // Helper method for function buttons with offsets
+    private void setupFunctionButtons(JButton[] buttons, String[] functions, int[] offsets) {
+        for (int i = 0; i < buttons.length; i++) {
+            buttonActions.put(buttons[i], new FunctionButtonAction(functions[i], offsets[i]));
+        }
+    }
+
+    // Helper method to create simple actions
+    private ButtonAction createAction(java.util.function.Consumer<CalculatorView> executeAction, String logMessage) {
+        return new ButtonAction() {
+            @Override
+            public void execute(CalculatorModel model, CalculatorView view, int cursorPosition) {
+                executeAction.accept(view);
+            }
+
+            @Override
+            public void actionPerformed(java.awt.event.ActionEvent e) {
+                System.out.println(logMessage);
+            }
+        };
     }
 }
