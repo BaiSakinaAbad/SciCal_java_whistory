@@ -8,44 +8,11 @@ import java.awt.*;
 public class JavaCalculator {
     public JPanel JavaCalculator;
     private JTextField displayPanel;
-    private JButton btnClear;
-    private JButton btnFour;
-    private JButton btnOne;
-    private JButton btnNine;
-    private JButton btnMultiply;
-    private JButton btnSeven;
-    private JButton btnZero;
-    private JButton btnEight;
-    private JButton btnPoint;
-    private JButton btnFive;
-    private JButton btnTwo;
-    private JButton btnThree;
-    private JButton btnSix;
-    private JButton btnPlus;
-    private JButton btnMinus;
-    private JButton btnDivide;
-    private JButton btnEqual;
-    private JButton btnSin;
-    private JButton btnCos;
-    private JButton btnTan;
-    private JButton btnLog;
-    private JButton btnLn;
-    private JButton btnExponent;
-    private JButton btnLeftParen;
-    private JButton btnRightParen;
-    private JButton btnMemoryStore;
-    private JButton btnMemoryRecall;
-    private JButton btnMemoryClear;
-    private JButton btnMemoryAdd;
-    private JButton btnHistory;
-    private JButton btnSqrt;
-    private JButton btnNthRoot;
-    private JButton btnCsc;
-    private JButton btnSec;
-    private JButton btnCot;
-    private JButton btnLeftArrow;
-    private JButton btnRightArrow;
-    private JButton btnDelete;
+    private JButton btnClear, btnFour, btnOne, btnNine, btnMultiply, btnSeven, btnZero, btnEight, btnPoint,
+            btnFive, btnTwo, btnThree, btnSix, btnPlus, btnMinus, btnDivide, btnEqual, btnSin, btnCos,
+            btnTan, btnLog, btnLn, btnExponent, btnLeftParen, btnRightParen, btnMemoryStore, btnMemoryRecall,
+            btnMemoryClear, btnMemoryAdd, btnHistory, btnSqrt, btnNthRoot, btnCsc, btnSec, btnCot,
+            btnLeftArrow, btnRightArrow, btnDelete;
     private JLabel gifLabel;
     private JPanel buttonPanel;
     private JPanel gifAndButtons;

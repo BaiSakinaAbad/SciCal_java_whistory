@@ -3,10 +3,9 @@ package view;
 import javax.swing.*;
 import java.awt.*;
 import java.util.List;
-// update displayPanel, manage cursor position and movement(l and r), shows history, char deletion
 
 public class CalculatorView {
-    private final JTextField displayPanel;
+    private static JTextField displayPanel;
 
     public CalculatorView(JTextField displayPanel) {
         this.displayPanel = displayPanel;
@@ -73,7 +72,7 @@ public class CalculatorView {
         }
     }
 
-    public void deleteCharBeforeCursor() {
+    public static void deleteCharBeforeCursor() {
         if (displayPanel != null) {
             int pos = displayPanel.getCaretPosition();
             String text = displayPanel.getText();
@@ -85,5 +84,10 @@ public class CalculatorView {
                 displayPanel.getCaret().setVisible(true);
             }
         }
+    }
+
+    // Added method to get the current display text
+    public static String getDisplayText() {
+        return displayPanel != null ? displayPanel.getText() : "";
     }
 }
