@@ -5,7 +5,8 @@ import view.CalculatorView;
 import javax.swing.*;
 import java.util.HashMap;
 import java.util.Map;
-// buttonActions
+
+// interaction of view and model, setting the button listeners
 public class CalculatorController {
     private final CalculatorModel model;
     private final CalculatorView view;

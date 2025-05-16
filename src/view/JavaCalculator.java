@@ -4,7 +4,7 @@ import controller.CalculatorController;
 import model.CalculatorModel;
 import javax.swing.*;
 import java.awt.*;
-
+// setup main ui using swing
 public class JavaCalculator {
     public JPanel JavaCalculator;
     private JTextField displayPanel;
@@ -40,7 +40,8 @@ public class JavaCalculator {
             displayPanel.setHorizontalAlignment(JTextField.RIGHT);
             displayPanel.setFont(new Font("Arial", Font.PLAIN, 20));
             displayPanel.setText("(˶˃ ᵕ ˂˶)");
-            displayPanel.getDocument().addDocumentListener(new javax.swing.event.DocumentListener() {
+            displayPanel.getDocument().addDocumentListener(new javax.swing.event.DocumentListener() {// to sync manual text with Calculator model
+
                 @Override
                 public void insertUpdate(javax.swing.event.DocumentEvent e) {
                     model.setExpression(displayPanel.getText());

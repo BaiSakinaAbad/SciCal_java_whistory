@@ -1,5 +1,5 @@
 package controller;
-// using buttonAction, takes a number and insert it at the current position of the cursor and und update the display panel
+//inheretance, takes a number and insert it at the current position of the cursor and und update the display panel
 
 import model.CalculatorModel;
 import view.CalculatorView;
@@ -13,8 +13,8 @@ public class NumberButtonAction implements ButtonAction {
 
     @Override
     public void execute(CalculatorModel model, CalculatorView view, int cursorPosition) {
-        model.insertAtPosition(number, cursorPosition);
-        view.setDisplayText(model.getExpression(), cursorPosition + number.length());
+        model.insertAtPosition(number, cursorPosition); // passing it to expression in model
+        view.setDisplayText(model.getExpression(), cursorPosition + number.length()); // updated the cursor position
     }
 
     @Override

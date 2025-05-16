@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * CalculatorModel manages the state of the calculator, including the current expression,
+ * CalculatorModel handles the current expression,
  * calculation history, and memory. It handles expression parsing and evaluation to
  * ExpressionParser
  */
@@ -77,8 +77,6 @@ public class CalculatorModel {
     public String toPostfix(String infix) {
         return parser.toPostfix(infix);
     }
-
-
      //Evaluates a postfix expression to produce a numerical result.
     public double evaluatePostfix(String postfix) {
         return parser.evaluatePostfix(postfix);

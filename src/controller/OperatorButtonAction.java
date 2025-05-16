@@ -15,8 +15,8 @@ public class OperatorButtonAction implements ButtonAction {
 
     @Override
     public void execute(CalculatorModel model, CalculatorView view, int cursorPosition) {
-        model.insertAtPosition(operator, cursorPosition);
-        view.setDisplayText(model.getExpression(), cursorPosition + operator.length());
+        model.insertAtPosition(operator, cursorPosition); // passing it to expression in model
+        view.setDisplayText(model.getExpression(), cursorPosition + operator.length());// to update cursor position
     }
 
     @Override

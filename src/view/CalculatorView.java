@@ -3,7 +3,7 @@ package view;
 import javax.swing.*;
 import java.awt.*;
 import java.util.List;
-
+// control display, update text field, handles cursor movement
 public class CalculatorView {
     private static JTextField displayPanel;
 
@@ -49,6 +49,8 @@ public class CalculatorView {
         historyDialog.setVisible(true);
     }
 
+
+    // left
     public void moveCursorLeft() {
         if (displayPanel != null) {
             int pos = displayPanel.getCaretPosition();
@@ -59,7 +61,7 @@ public class CalculatorView {
             }
         }
     }
-
+// right
     public void moveCursorRight() {
         if (displayPanel != null) {
             int pos = displayPanel.getCaretPosition();
